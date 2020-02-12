@@ -1,10 +1,8 @@
 /*
-
 - count
 - handleIncrement
 - handleDecrement
 - handleReset
-
 */
 
 import React from 'react';
