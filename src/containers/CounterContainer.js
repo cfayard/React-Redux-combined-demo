@@ -1,20 +1,22 @@
-import {connect} from 'react-redux';
-import Counter from '../components/Counter';
 import {
-    actionIncrement,
-    actionDecrement,
-    actionReset
-} from '../actions'
+    connect
+} from 'react-redux';
 
-// Describe how to translate redux state into react props
+import Counter from '../components/Counter';
+import { actionIncrement, actionDecrement, actionReset } from '../actions';
+
+// Describe how to translate redux state
+// into react props
 function mapStateToProps(state) {
+    // console.log(state)
     return {
-        count: state.count
+        count: state
     }
 }
 
-// Describe how to translate redux dispatch into react props
-function mapDispatchToProps() {
+// Describe how to transate redux dispatch
+// into react props.
+function mapDispatchToProps(dispatch) {
     return {
         handleIncrement: () => {
             // store.dispatch(actionIncrement())
@@ -29,9 +31,8 @@ function mapDispatchToProps() {
     }
 }
 
-const reduxConnecter = connect(
-    mapStateToProps,
-    mapDispatchToProps
-);
+const reduxConnector = connect(mapStateToProps, mapDispatchToProps);
+export default reduxConnector(Counter);
 
-export default reduxConnecter(Counter);
+// Popular with some tutorials:
+// export default connect(mapStateToProps, mapDispatchToProps)(Counter);
