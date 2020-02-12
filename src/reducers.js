@@ -1,12 +1,12 @@
-// Our ideal/default state is just a number:
-// 0
-// -1
-
 import {
     INCREMENT,
     DECREMENT,
     RESET
 } from './actions'
+
+// Our ideal/default state is just a number:
+// 0
+// -1
 
 export function count(state=0, action) {
     let newState = state;
