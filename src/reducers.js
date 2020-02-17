@@ -1,27 +1,37 @@
-import {
-    INCREMENT,
-    DECREMENT,
+
+import { 
+    INCREMENT, 
+    DECREMENT, 
     RESET
-} from './actions'
+} from "./actions";
 
-// Our ideal/default state is just a number:
-// 0
-// -1
-
-export function count(state=0, action) {
+export function count(state=6, action) {
     let newState = state;
-    switch(action.type) {
+    switch (action.type) {
         case INCREMENT:
-            newState += 1;
+            // increment!
+            newState += 1
+            // if (newState % 2 ===0 ) {
+            //     console.log('state is even')
+            // } else if (newState % 10 === 0) {
+            //     console.log('state is divisible by 10')
+            // } else {
+            //     console.log('state is odd')
+            // }
             break;
         case DECREMENT:
-            return state -= 1;
+            // decrement
+            newState -= 1;
             break;
         case RESET:
-            newState=0;
+            // reset to 0
+            newState = 0;
             break;
-        defalut:
-            break;
+        // case CHANGECOLOR:
+            // CHANGECOLOR
+        //    return [...state],
+        default:
+            break;        
     }
     return newState;
 }
